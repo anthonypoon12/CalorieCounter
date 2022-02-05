@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/login'
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/login'#plug in ur real password and create a database w the name login
 db=SQLAlchemy(app)
 class Data(db.Model):
     __tablename__="data"
