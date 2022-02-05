@@ -12,3 +12,4 @@ function gotData(data){
   calories = results[0].nutrition.nutrients[0].amount;
   console.log(calories);
 }
+search("rice");
