@@ -3,13 +3,15 @@ var food;
 var calories;
 const key = "7c302975880645909c500fcde665037c";
 var url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=7c302975880645909c500fcde665037c&addRecipeNutrition=true&query=";
-function search(name){
+var response;
+var data;
+async function search(name){
   url+=name;
-  loadJSON(url,gotData);
+  response = await fetch(url);
+  data = await response.json();
+  gotData(data);
 }
 function gotData(data){
-  food = data;
-  calories = results[0].nutrition.nutrients[0].amount;
-  console.log(calories);
+  console.log(data.results[0].nutrition.nutrients[0].amount);
 }
-search("rice");
+// search("rice");
