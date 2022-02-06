@@ -1,8 +1,8 @@
 "use strict";
 var food;
 var calories;
-const key = "b17cfe9948de44bba967702848474dc8";
-var urlurl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=b17cfe9948de44bba967702848474dc8&addRecipeNutrition=true&query=";
+const key = "67944702ff914d50b6e5b5e87c49ee4f";
+var urlurl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=67944702ff914d50b6e5b5e87c49ee4f&addRecipeNutrition=true&query=";
 var response;
 var data;
 let fName, servings, fCalories
@@ -18,6 +18,13 @@ function gotData(data) {
   servings = data.results[0].servings
   fCalories = data.results[0].nutrition.nutrients[0].amount
   console.log(fName, servings, fCalories);
+  $("#table").append(
+    "<tr class=\"text-center\">" +
+    "<th scope=\"row\">" + count + "</th>" +
+    "<td class=\"fw-bold\">" + fName + "</td>" +
+    "<td> <input class=\"form-control\"placeholder=\"Enter Number of Servings:\"> </td>" +
+    "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
+    "</tr>");
 }
 
 
@@ -36,16 +43,6 @@ $("#btn1").click(function () {
   } else {
     food = search(food)
     count++
-
-    $("#table").append(
-      "<tr class=\"text-center\">" +
-      "<th scope=\"row\">" + count + "</th>" +
-      "<td class=\"fw-bold\">" + fName + "</td>" +
-      "<td> <input class=\"form-control\"placeholder=\"Enter Number of Servings:\"> </td>" +
-      "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
-      "</tr>");
-    // todayTotalCalories+= parseInt($(".calorie").text())
-    // alert(todayTotalCalories)
 
     let todayTotalCalories = 0
     for (let i = 1; i < table.rows.length; i++) {
