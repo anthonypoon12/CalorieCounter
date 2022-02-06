@@ -14,4 +14,4 @@ async function search(name){
 function gotData(data){
   console.log(data.results[0].title,data.results[0].servings,data.results[0].nutrition.nutrients[0].amount);
 }
-search("fried");
+// search("fried");
