@@ -13,7 +13,7 @@ class Data(db.Model):
     def __init__(self, email_, password_):
         self.email_=email_
         self.password_=password_
-@app.route("/login")
+@app.route("/")
 def login():
     return render_template("login.html")
 

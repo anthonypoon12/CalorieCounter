@@ -33,24 +33,11 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="Project5.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link active" aria-current="page" href="{{url_for('Project5')}}">Home</a>
           </li>
         </ul>
         <form class="d-flex">
-          <a class="btn btn-primary" href="login.html" role="button">Login/Register</a>
+          <a class="btn btn-primary" href="{{url_for('login')}}" role="button">Login</a>
         </form>
       </div>
     </div>
@@ -128,111 +115,16 @@
           <div class="col-xl-5 col-md-8">
             <h1 class="row justify-content-center">Lifestylin' Registration</h1>
             <form class="row g-3">
-              <div class="col-md-6">
-                <!-- Collects Users' First name -->
-                <label for="inputFName" class="form-label">First Name</label>
-                <input type="email" class="form-control" id="inputEmail4">
-              </div>
-              <div class="col-md-6">
-                <!-- Collects Users' Last name -->
-                <label for="inputPassword4" class="form-label">Last Name</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <!-- Collects Users' Email -->
                 <label for="inputEmail4" class="form-label">Email</label>
                 <input type="email" class="form-control" id="inputEmail4">
               </div>
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <!-- Collects Users' Password for account -->
                 <label for="inputPassword4" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword4">
               </div>
-              <div class="col-4">
-                <!-- Collects Users' sex -->
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>Female</option>
-                  <option>Male</option>
-                </select>
-              </div>
-              <div class="col-4">
-                <!-- Collects Users' age -->
-                <label for="inputAddress2" class="form-label">Age</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Age">
-              </div>
-              <div class="col-4">
-                <!-- Collects Users' Height in Inches -->
-                <label for="inputAddress2" class="form-label">Height</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Height in inches">
-              </div>
-              <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-              <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                  <option selected>Choose...</option>
-                  <option>AK</option>
-                  <option>AL</option>
-                  <option>AR</option>
-                  <option>AZ</option>
-                  <option>CA</option>
-                  <option>CO</option>
-                  <option>CT</option>
-                  <option>DC</option>
-                  <option>DE</option>
-                  <option>FL</option>
-                  <option>GA</option>
-                  <option>HI</option>
-                  <option>IA</option>
-                  <option>ID</option>
-                  <option>IL</option>
-                  <option>IN</option>
-                  <option>KS</option>
-                  <option>KY</option>
-                  <option>LA</option>
-                  <option>MA</option>
-                  <option>MD</option>
-                  <option>ME</option>
-                  <option>MI</option>
-                  <option>MN</option>
-                  <option>MO</option>
-                  <option>MS</option>
-                  <option>MT</option>
-                  <option>NC</option>
-                  <option>ND</option>
-                  <option>NE</option>
-                  <option>NH</option>
-                  <option>NJ</option>
-                  <option>NM</option>
-                  <option>NV</option>
-                  <option>NY</option>
-                  <option>OH</option>
-                  <option>OK</option>
-                  <option>OR</option>
-                  <option>PA</option>
-                  <option>RI</option>
-                  <option>SC</option>
-                  <option>SD</option>
-                  <option>TN</option>
-                  <option>TX</option>
-                  <option>UT</option>
-                  <option>VA</option>
-                  <option>VT</option>
-                  <option>WA</option>
-                  <option>WI</option>
-                  <option>WV</option>
-                  <option>WY</option>
-                </select>
-              </div>
-              <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-
               <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign Up</button>
               </div>
