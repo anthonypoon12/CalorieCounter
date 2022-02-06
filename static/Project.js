@@ -1,8 +1,8 @@
 "use strict";
 var food;
 var calories;
-const key = "7c302975880645909c500fcde665037c";
-var urlurl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=7c302975880645909c500fcde665037c&addRecipeNutrition=true&query=";
+const key = "b17cfe9948de44bba967702848474dc8";
+var urlurl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=b17cfe9948de44bba967702848474dc8&addRecipeNutrition=true&query=";
 var response;
 var data;
 let fName, servings, fCalories
