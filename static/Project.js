@@ -24,11 +24,15 @@ function gotData(data) {
     "<tr class=\"text-center\">" +
     "<th scope=\"row\">" + count + "</th>" +
     "<td class=\"fw-bold\">" + fName + "</td>" +
-    "<td> <input class=\"form-control\"placeholder=\"Enter Number of Servings:\"> </td>" +
+    "<td> <input class=\"form-control servings\"placeholder=\"Enter Number of Servings:\"> </td>" +
     "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
     "</tr>");
+    let todayTotalCalories = 0
+    for (let i = 1; i < table.rows.length; i++) {
+      todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
+    }
+    $("#totalCalories").text(todayTotalCalories)
 }
-
 
 
 let count = 0
@@ -46,11 +50,6 @@ $("#btn1").click(function () {
     food = search(food)
     count++
 
-    let todayTotalCalories = 0
-    for (let i = 1; i < table.rows.length; i++) {
-      todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
-    }
-    $("#totalCalories").text(todayTotalCalories)
   }
 
 
