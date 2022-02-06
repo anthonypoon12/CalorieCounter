@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:password@localhost/login'#plug in ur real password and create a database w the name login
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:lolsmileyface2@localhost/login'#plug in ur real password and create a database w the name login
 db=SQLAlchemy(app)
 class Data(db.Model):
     __tablename__="data"
@@ -16,7 +16,7 @@ class Data(db.Model):
 @app.route("/")
 def login():
     return render_template("login.html")
-@app.route("/Project5",methods=['POST'])
+@app.route("/Project5",methods=['POST','GET'])
 def Project5():
     if request.method=='POST':
         email=request.form["email"]
@@ -25,7 +25,7 @@ def Project5():
         data=Data(email,password)
         db.session.add(data)
         db.session.commit()
-        return render_template("Project5.html")
+    return render_template("Project5.html")
 if __name__ == '__main__':
     app.debug=True
     app.run()

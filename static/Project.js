@@ -12,6 +12,6 @@ async function search(name){
   gotData(data);
 }
 function gotData(data){
-  console.log(data.results[0].nutrition.nutrients[0].amount);
+  console.log(data.results[0].title,data.results[0].servings,data.results[0].nutrition.nutrients[0].amount);
 }
-// search("rice");
+search("fried");

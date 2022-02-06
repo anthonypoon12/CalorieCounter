@@ -45,11 +45,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
         </ul>
         <form class="d-flex">
+          <!-- use this for links -->
           <a class="btn btn-primary" href="{{url_for('login')}}" role="button">Login</a>
         </form>
       </div>
@@ -104,9 +102,6 @@
   <div class="container-md mt-5">
     <h1>Today's Total Calories:</h1>
     <hr>
-    <h3>Highest Calorie Item: </h3>
-    <hr>
-
   </div>
 </body>
 <footer class="bg-light text-lg-start">
@@ -127,5 +122,5 @@
     </a>
   </div>
 </footer>
-
+<script src="{{url_for('static', filename='Project.js')}}"></script>
 </html>
