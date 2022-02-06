@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:"password"@localhost/login'#plug in ur real password and create a database w the name login
+app.config['SQLALCHEMY_DATABASE_URI']='postgresql://postgres:rock121212@localhost/login'#plug in ur real password and create a database w the name login
 db=SQLAlchemy(app)
 class Data(db.Model):
     __tablename__="data"
@@ -30,6 +30,11 @@ def Project5():
         data=Data(email,password)
         db.session.add(data)
         db.session.commit()
+        return redirect(url_for("user",usr=email))
+    return render_template("Project5.html")
+
+@app.route("/<usr>")
+def user(usr):
     return render_template("Project5.html")
 if __name__ == '__main__':
     app.debug=True
