@@ -2,16 +2,63 @@
 var food;
 var calories;
 const key = "7c302975880645909c500fcde665037c";
-var url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=7c302975880645909c500fcde665037c&addRecipeNutrition=true&query=";
+var urlurl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=7c302975880645909c500fcde665037c&addRecipeNutrition=true&query=";
 var response;
 var data;
-async function search(name){
-  url+=name;
+let fName, servings, fCalories
+async function search(name) {
+  let url = urlurl+name;
   response = await fetch(url);
   data = await response.json();
   gotData(data);
 }
-function gotData(data){
-  console.log(data.results[0].title,data.results[0].servings,data.results[0].nutrition.nutrients[0].amount);
+
+function gotData(data) {
+  fName = data.results[0].title
+  servings = data.results[0].servings
+  fCalories = data.results[0].nutrition.nutrients[0].amount
+  console.log(fName, servings, fCalories);
 }
-search("fried");
+
+
+
+let count = 0
+
+function isValidString(str1) {
+  return str1 != null && typeof str1 === "string" && str1.length > 0;
+}
+
+$("#btn1").click(function () {
+  let food
+  food = $("#search").val()
+  if (isValidString(food) === false) {
+    alert(food + " is not a valid input")
+  } else {
+    food = search(food)
+    count++
+
+    $("#table").append(
+      "<tr class=\"text-center\">" +
+      "<th scope=\"row\">" + count + "</th>" +
+      "<td class=\"fw-bold\">" + fName + "</td>" +
+      "<td> <input class=\"form-control\"placeholder=\"Enter Number of Servings:\"> </td>" +
+      "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
+      "</tr>");
+    // todayTotalCalories+= parseInt($(".calorie").text())
+    // alert(todayTotalCalories)
+
+    let todayTotalCalories = 0
+    for (let i = 1; i < table.rows.length; i++) {
+      todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
+    }
+    $("#totalCalories").text(todayTotalCalories)
+  }
+
+
+})
+
+
+
+// "id=\""+count+"\""
+
+// search("Bigbiitoased");

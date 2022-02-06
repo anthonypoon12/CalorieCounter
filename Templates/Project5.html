@@ -11,10 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="css/mdb.min.css" />
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="css/style.css" />
+
   <title>Lifestylin' LLC</title>
 </head>
 
@@ -62,9 +59,9 @@
     <i class="fas fa-hamburger"></i>
     <i class="fas fa-carrot"></i>
     <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Enter the food you want to search for!"
+      <input id ="search"type="text" class="form-control" placeholder="Enter the food you want to search for!"
         aria-label="Recipient's username" aria-describedby="button-addon2">
-      <button type="button" class="btn btn-primary">
+      <button id = "btn1"type="button" class="btn btn-primary">
         <i class="fas fa-search"></i>
       </button>
     </div>
@@ -72,7 +69,7 @@
   <!-- Selected Foods Section -->
   <div class="container-md mt-5">
     <h1>Your Selected Food(s):</h1>
-    <table class="table table-success table-hover table-bordered border border-dark">
+    <table class="table table-success table-hover table-bordered border border-dark" id="table">
       <thead>
         <tr>
           <!-- Displays what number the item is -->
@@ -83,24 +80,17 @@
           <th scope="col">Serving(s)</th>
           <!-- Multiples calories by the user's input serving size -->
           <th scope="col">Calories total</th>
+          <th scope="col">Del</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="text-center">
-          <th scope="row">1</th>
-          <td class="fw-bold">Almonds</td>
-          <td>
-            <input type="" class="form-control" id="exampleFormControlInput1" placeholder="Enter Number of Servings:">
-          </td>
-          <td class="fw-bold">2000</td>
-        </tr>
       </tbody>
     </table>
   </div>
 
   <!-- Today's Total Calories -->
   <div class="container-md mt-5">
-    <h1>Today's Total Calories:</h1>
+    <h1>Today's Total Calories: <p id = totalCalories></p> </h1>
     <hr>
   </div>
 </body>
@@ -122,5 +112,9 @@
     </a>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="{{url_for('static', filename='Project.js')}}"></script>
+
+
 </html>
