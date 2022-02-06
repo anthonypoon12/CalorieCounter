@@ -24,9 +24,14 @@ function gotData(data) {
     "<tr class=\"text-center\">" +
     "<th scope=\"row\">" + count + "</th>" +
     "<td class=\"fw-bold\">" + fName + "</td>" +
-    "<td> <input class=\"form-control\"placeholder=\"Enter Number of Servings:\"> </td>" +
+    "<td> <input id="+count+"\" class=\"form-control\"placeholder=\"Enter Number of Servings:\" onkeyup=\"getValue(this)\"></td>" +
     "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
-    "</tr>");
+    "</tr>");    
+    let todayTotalCalories = 0
+    for (let i = 1; i < table.rows.length; i++) {
+      todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
+    }
+    $("#totalCalories").text(todayTotalCalories)
 }
 
 
@@ -46,18 +51,13 @@ $("#btn1").click(function () {
     food = search(food)
     count++
 
-    let todayTotalCalories = 0
-    for (let i = 1; i < table.rows.length; i++) {
-      todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
-    }
-    $("#totalCalories").text(todayTotalCalories)
   }
-
-
 })
 
-
-
-// "id=\""+count+"\""
-
-// search("Bigbiitoased");
+function getValue(arg){
+  let id = arg.getAttribute('id');
+  let value = arg.value;
+  id = id.slice(0,id.length-1)
+  let calorie = parseInt(value) * parseInt(table.rows[id].cells[3].innerHTML)
+  console.log(calorie);
+}
