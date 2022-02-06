@@ -17,6 +17,8 @@ function gotData(data) {
   fName = data.results[0].title
   servings = data.results[0].servings
   fCalories = data.results[0].nutrition.nutrients[0].amount
+  fCalories = (parseFloat(fCalories)/parseFloat(servings)).toFixed(1)
+  fCalories = String(fCalories)
   console.log(fName, servings, fCalories);
   $("#table").append(
     "<tr class=\"text-center\">" +
