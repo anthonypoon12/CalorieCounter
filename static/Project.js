@@ -25,7 +25,7 @@ function gotData(data) {
       "<tr class=\"text-center\">" +
       "<th scope=\"row\">" + count + "</th>" +
       "<td class=\"fw-bold\">" + fName + "</td>" +
-      "<td> <input class=\"form-control servings\"placeholder=\"Enter Number of Servings:\"> </td>" +
+      "<td> <input id="+count+"\" class=\"form-control\"placeholder=\"Enter Number of Servings:\" onkeyup=\"getValue(this)\"></td>" +
       "<td class=\"fw-bold calorie\">" + fCalories + "</td>" +
       "</tr>");
       let todayTotalCalories = 0
@@ -33,11 +33,10 @@ function gotData(data) {
         todayTotalCalories = todayTotalCalories + parseInt(table.rows[i].cells[3].innerHTML)
       }
       $("#totalCalories").text(todayTotalCalories)
-      count++
-  }
-  else {
-    alert("Try Again!");
-  }
+    }
+    else {
+      alert("Try Again!");
+    }
 }
 
 
@@ -56,12 +55,12 @@ $("#btn1").click(function () {
     food = search(food)
 
   }
-
-
 })
 
-
-
-// "id=\""+count+"\""
-
-// search("Bigbiitoased");
+function getValue(arg){
+  let id = arg.getAttribute('id');
+  let value = arg.value;
+  id = id.slice(0,id.length-1)
+  let calorie = parseInt(value) * parseInt(table.rows[id].cells[3].innerHTML)
+  console.log(calorie);
+}
